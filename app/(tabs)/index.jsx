@@ -15,7 +15,9 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <NavButton color='#737373'>Login</NavButton>
+        <NavButton navigateTo='Login' color='#737373'>
+          Login
+        </NavButton>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <NavButton navigateTo='Swipe' color='#737373'>
@@ -36,10 +38,10 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   reactLogo: {
-    height: 178,
-    width: 290,
+    height: 300,
+    width: 300,
     position: 'absolute',
-    top: '20%',
-    left: '15%',
+    top: '-5%',
+    left: '10%',
   },
 });
