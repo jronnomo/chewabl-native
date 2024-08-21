@@ -1,10 +1,12 @@
-import { View, StyleSheet, Button, Text } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
+import { Link } from 'expo-router';
 import React from 'react';
 
 export default function Login() {
   return (
     <View style={styles.background}>
-      <Button title='Swipe' onClick={() => navigation.navigate('Swipe')}></Button>
+      <Text>Welcome to Login!</Text>
+      <Link href='/signup'>Or Sign Up Here</Link>
     </View>
   );
 }

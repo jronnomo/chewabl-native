@@ -1,13 +1,18 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, Pressable } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
 export function NavButton({ style, children, color, navigateTo, ...rest }) {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <StatusBar style='auto' />
       <View style={styles.wrapper}>
-        <TouchableOpacity style={[styles.wrapper, styles.touchableButton]} onPress={() => console.log('press')}>
+        <TouchableOpacity
+          onPress={() => router.push('/' + navigateTo)}
+          style={[styles.wrapper, styles.touchableButton]}>
           <Text style={styles.textStyle}>{children}</Text>
         </TouchableOpacity>
         {/* <View style={{ marginVertical: 10 }} />
@@ -29,7 +34,6 @@ export function NavButton({ style, children, color, navigateTo, ...rest }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2D2D2D',
     alignItems: 'center',
     justifyContent: 'center',
   },

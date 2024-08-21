@@ -15,15 +15,16 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <NavButton navigateTo='Login' color='#737373'>
+        <NavButton navigateTo='login' color='#737373'>
           Login
         </NavButton>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <NavButton navigateTo='Swipe' color='#737373'>
+        <NavButton navigateTo='signup' color='#737373'>
           Sign Up Here
         </NavButton>
       </ThemedView>
+      <Image src={require('@/assets/images/bite.jpg')} />
     </ParallaxScrollView>
   );
 }
