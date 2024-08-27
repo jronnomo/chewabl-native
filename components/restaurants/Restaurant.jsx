@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from 'react-native';
-import RestaurantLogo from '@/components/RestaurantLogo';
+import Logo from '@/components/Logo';
 
-export default function Restaurant({ restaurant, index }) {
+export default function Restaurant({ restaurant }) {
   if (!restaurant) {
     return (
       <View style={styles.restaurantContainer}>
@@ -12,7 +12,7 @@ export default function Restaurant({ restaurant, index }) {
 
   return (
     <View style={styles.restaurantContainer}>
-      <RestaurantLogo />
+      <Logo img={require('@/assets/images/IMG_2015.jpg')} height={300} width={300} />
       <Text>{restaurant.name}</Text>
     </View>
   );

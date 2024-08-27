@@ -1,5 +1,5 @@
 import { View } from 'react-native';
-import Restaurant from '@/components/Restaurant';
+import Restaurant from '@/components/restaurants/Restaurant';
 
 export default function RestaurantList({ restaurants }) {
   return (

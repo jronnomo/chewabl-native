@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { useEffect, useState } from 'react';
-import RestaurantList from '@/components/RestaurantList';
+import RestaurantList from '@/components/restaurants/RestaurantList';
 
 export default function SwipeScreen() {
   const [restaurants, setRestaurants] = useState([]);

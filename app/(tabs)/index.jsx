@@ -1,15 +1,16 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { NavButton } from '@/components/buttons/Button';
+import { NavButton } from '@/components/buttons/NavButton';
 
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ dark: '#1A1C1F', light: '#181a1c' }}
       headerImage={<Image source={require('@/assets/images/IMG_2015.jpg')} style={styles.reactLogo} />}>
+      {/* headerImage={<Logo img={require('@/assets/images/IMG_2015.jpg')} height={300} width={300} />} */}
       <ThemedView style={styles.titleContainer}>
         <ThemedText type='title'>Chewabl</ThemedText>
         <HelloWave />

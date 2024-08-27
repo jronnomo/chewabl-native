@@ -15,17 +15,6 @@ export function NavButton({ style, children, color, navigateTo, ...rest }) {
           style={[styles.wrapper, styles.touchableButton]}>
           <Text style={styles.textStyle}>{children}</Text>
         </TouchableOpacity>
-        {/* <View style={{ marginVertical: 10 }} />
-        <Pressable
-          onPress={() => {
-            console.log('press');
-          }}>
-          {({ pressed }) => (
-            <View style={[styles.wrapper, { backgroundColor: pressed ? '#0476a0' : '#1146aa' }]}>
-              <Text style={[styles.textStyle, { color: pressed ? '#fafafa' : '#aaffaa' }]}>Pressable Button</Text>
-            </View>
-          )}
-        </Pressable> */}
       </View>
     </View>
   );
