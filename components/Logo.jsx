@@ -1,27 +1,21 @@
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 export default function Logo({ img, height, width }) {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ dark: '#1A1C1F', light: '#181a1c' }}
-      headerImage={<Image source={img} style={[styles.reactLogo, { height, width }]} />}></ParallaxScrollView>
+    <View style={styles.logoContainer}>
+      <Image source={img} style={[styles.reactLogo, { height: height || 250, width: width || 250 }]} />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  logoContainer: {
+    justifyContent: 'center',
     alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
   },
   reactLogo: {
     position: 'absolute',
-    top: '-5%',
-    left: '10%',
+    top: 0,
+    left: 0,
   },
 });

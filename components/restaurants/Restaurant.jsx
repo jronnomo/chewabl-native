@@ -12,7 +12,7 @@ export default function Restaurant({ restaurant }) {
 
   return (
     <View style={styles.restaurantContainer}>
-      <Logo img={require('@/assets/images/IMG_2015.jpg')} height={300} width={300} />
+      <Logo img={require('@/assets/images/bite.jpg')} />
       <Text>{restaurant.name}</Text>
     </View>
   );
@@ -20,21 +20,7 @@ export default function Restaurant({ restaurant }) {
 
 const styles = StyleSheet.create({
   restaurantContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
     paddingTop: 60,
     paddingLeft: 60,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
   },
 });
