@@ -1,41 +1,38 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { useEffect, useState } from 'react';
 import RestaurantList from '@/components/restaurants/RestaurantList';
 
 export default function SwipeScreen() {
   const [restaurants, setRestaurants] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchRestaurants() {
-      const res = await fetch('http://localhost:3000/api/restaurants/');
-      const data = await res.json();
-      setRestaurants(data);
+      try {
+        const res = await fetch('http://localhost:3000/api/restaurants/');
+        const data = await res.json();
+        setRestaurants(data);
+      } catch (error) {
+        console.error('Error fetching restaurants:', error);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
     fetchRestaurants();
   }, []);
 
   return (
-    <View>
+    <View style={styles.container}>
+      {isLoading && <ActivityIndicator size='small' color='#0000ff' />}
       <RestaurantList restaurants={restaurants} />
     </View>
   );
 }
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 60,
   },
 });
