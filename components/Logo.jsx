@@ -1,9 +1,9 @@
 import { Image, StyleSheet, View } from 'react-native';
 
-export default function Logo({ img, height, width }) {
+export default function Logo({ img, height = 250, width = 250 }) {
   return (
     <View style={styles.logoContainer}>
-      <Image source={img} style={[styles.reactLogo, { height: height || 250, width: width || 250 }]} />
+      <Image source={img} style={[styles.reactLogo, { height, width, borderRadius: height / 2 }]} />
     </View>
   );
 }
@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
   },
   reactLogo: {
     position: 'absolute',
-    top: 0,
-    left: 0,
+    top: -250,
+    left: -45,
+    borderWidth: 2, // Optional: Add a border for the circle
+    borderColor: '#000', // Optional: Border color for the circle
   },
 });

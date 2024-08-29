@@ -12,7 +12,7 @@ export default function Restaurant({ restaurant }) {
 
   return (
     <View style={styles.restaurantContainer}>
-      <Logo img={require('@/assets/images/bite.jpg')} />
+      <Logo img={require('@/assets/images/restaurants/carrabas.jpg')} />
       <Text>{restaurant.name}</Text>
     </View>
   );
@@ -20,7 +20,7 @@ export default function Restaurant({ restaurant }) {
 
 const styles = StyleSheet.create({
   restaurantContainer: {
-    paddingTop: 60,
+    paddingTop: 0,
     paddingLeft: 60,
   },
 });

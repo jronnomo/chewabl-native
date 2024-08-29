@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { PRIMARY_COLOR } from '@/assets/color_theme';
 
 export function NavButton({ style, children, color, navigateTo, ...rest }) {
   const router = useRouter();
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   touchableButton: {
-    backgroundColor: '#FF0000',
+    backgroundColor: PRIMARY_COLOR,
   },
   textStyle: {
     color: 'white',
